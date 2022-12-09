@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small Ruby on Rails application providing an endpoint which takes a GPS latitude and longitude and spits out the names of museums around that location grouped by their postcode as JSON.
 
-Things you may want to cover:
+As an example when doing a request to /museums?lat=52.494857&lng=13.437641 would generate a response similar to:
 
-* Ruby version
+```
+{
+  "10999": ["Werkbundarchiv – museum of things"],
+  "12043": ["Museum im Böhmischen Dorf"],
+  "10179": [
+    "Märkisches Museum",
+    "Museum Kindheit und Jugend",
+    "Historischer Hafen Berlin"
+  ],
+  "12435": ["Archenhold Observatory"]
+}
+```
 
-* System dependencies
+## Instructions
+1. In your terminal, enter `rails s`
+2. In your broswer, go to [`http://localhost:3000/museums?lat=45.51&lng=-73.56`](http://localhost:3000/museums?lat=45.51&lng=-73.56) (with whatever coordinates you want)
 
-* Configuration
+This challenge is taken from Le Wagon's career week challenges, [Junior Backend Developer @Mercedes-Benz](https://lewagon.notion.site/Junior-Backend-Developer-Mercedes-Benz-1c437fd7e3bc48888e35d2792d29b626)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO:
+- Make the API more generic, so it accepts any type of point of interest, not just museums
+- Return more than 10 results
+- Show distance between each museum and the given coords as the crow flies
+- Show distance between each museum and the given coords while driving/walking
