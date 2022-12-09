@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Custom gems
+gem 'dotenv-rails'
+gem 'open-uri'
+gem 'json'
